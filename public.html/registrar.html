@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar</title> 
+      <link rel="stylesheet" href="css/style.css">  
+	</head>
+<body>
+  <body>
+	  
+	  <script>
+function valida_formulario() {
+		var emp  = document.getElementById("txt_empresa").value;
+		var ema  = document.getElementById("txt_email").value;
+		var pws  = document.getElementById("txt_pws").value;
+		var rep  = document.getElementById("txt_pwsrep").value;
+	    var nom  = document.getElementById("txt_nombre").value;
+		var ape  = document.getElementById("txt_apep").value;
+		var mat  = document.getElementById("txt_apem").value;		
+		var r = document.getElementsByName("txt_emp");
+		
+		if(emp == '' || nom == '' || ape== '' || mat ==''){
+		alert("Verefique sus campos");
+		return false;
+		}
+		
+		var c= -1;
+		for(var i=0; i < r.length; i++){
+		   if(r[i].checked) {
+			  c = i; 
+		   }
+		}
+		
+		if (c == -1){
+		alert("Seleccione una empresa");
+		return false;
+		}
+		
+		var lt=new RegExp("^[a-zA-Z]+");
+		var espacios = false;
+		var cont = 0;
+
+		while (!espacios && (cont < pws.length)) {
+		if (pws.charAt(cont) == " ")
+		espacios = true;
+		cont++;
+		}
+				
+		if (espacios) {
+		alert ("La contraseña no puede contener espacios en blanco");
+		return false;
+		}
+		
+		if(!(/\S+@\S+\.\S+/.test(ema))){
+			alert('Debe escribir un correo válido');
+			return false;
+		}				
+		//if(!lt.test(emp) || !lt.test(nom) || !lt.test(ape)|| !lt.test(mat)) {
+		  //alert('Vereficar sus datos ');
+		  //return false;
+		//}		
+		
+		if(pws != rep){
+		  alert('Las contraseñas deben de coincidir');
+		  return false;	
+		}
+		
+		return true;		
+}
+</script>
+
+<div class="container">
+	<section id="content">
+		<form action="app/registrarContrato.php" method="post" onsubmit="return valida_formulario()">
+			<h1>Tus datos </h1>
+			<div id="divRadios" >
+					  <input type="radio"  id="1" name="txt_emp" value="1" checked>Empresa
+					  <input type="radio"  id="2" name="txt_emp" value="2">Independiente
+					  <input type="radio"  id="3" name="txt_emp" value="3">Particular
+			</div>
+			<div>
+				<input type="text" placeholder="Nombre de la empresa *"  maxlength="80" id="txt_empresa" name="txt_empresa"/>
+			</div>
+			<div>
+				<input type="text" placeholder="Email *"  maxlength="80" id="txt_email" name="txt_email"/>
+			</div>
+			<div>
+				<input type="password" placeholder="Contraseña"  maxlength="20" id="txt_pws" name="txt_pws"/>
+			</div>
+			<div>
+				<input type="password" placeholder="Repetir contraseña *"  maxlength="20" id="txt_pwsrep" name="txt_pwsrep"/>
+			</div>
+			<div>
+				<input type="text" placeholder="Nombre *"  maxlength="80" id="txt_nombre" name="txt_nombre"/>
+			</div>
+			<div>
+				<input type="text" placeholder="Apellido paterno *"  maxlength="80" id="txt_apep" name="txt_apep"/>
+			</div>
+			<div>
+				<input type="text" placeholder="Apellido materno *"  maxlength="80" id="txt_apem" name="txt_apem"/>
+			</div>
+			<div>
+				<input type="submit" value="Registrar" />		
+			</div>
+		</form>		
+		
+	</section>
+</div>
+
+</body>
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

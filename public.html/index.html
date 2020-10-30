@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de control</title>  
+      <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+  <body>
+   <script>
+function valida_formulario() {
+		var  email = document.getElementById("txtidcontrato").value;
+		var  contr = document.getElementById("txtcon_pws").value;
+		
+		if(email =='' || contr== ''){
+		alert("Verefique sus datos");
+		return false;
+		}
+		
+		return true;		
+}
+</script>  
+<div class="container">
+	<section id="content">
+		<form action="app/index.php" method="post" onsubmit="return valida_formulario()">
+			<h1>Login </h1>
+			<div>
+				<input type="text" placeholder="Numero de contrato o correo" id="txtidcontrato" name="txtidcontrato" />
+			</div>
+			<div>
+				<input type="password" placeholder="CONTRASEÑA" id="txtcon_pws" name="txtcon_pws" />
+			</div>
+			<div>
+				<input type="submit" value="Iniciar" />
+				<a href="recuperar_contr.html" target="_blank">Recuperar contraseña?</a>
+				<a href="registrar.html" target="_blank">Registrar</a>
+			</div>
+		</form><!-- form -->
+		
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

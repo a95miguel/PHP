@@ -1,0 +1,31 @@
+{
+	"usuario":[
+	{
+	"nom": "Fernando Luis Menecess",
+	"usu": "Fernando",
+	"pws": "123",
+	"pto": "Gerente de Limpieza",
+	"depto": "Tics",
+	"email": "nuevo@gmail.com",
+	"tel": "2343212334"	 
+	},
+	{
+	"nom": "jose jimenez hipatl",
+	"usu": "jose jh",
+	"pws": "123wq2w",
+	"pto": "Maestro",
+	"depto": "Tics",
+	"email": "nuevo323@gmail.com",
+	"tel": "23432123"			
+	},
+	{
+	"nom": "Manuel jose jose",
+	"usu": "malemdm jh",
+	"pws": "nsjkjkdjiu9",
+	"pto": "Instructor",
+	"depto": "Futbol",
+	"email": "Arsenal32@gmail.com",
+	"tel": "2327389272789"			
+	}
+	]
+}

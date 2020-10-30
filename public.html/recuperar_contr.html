@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperacion contraseña</title>
+      <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <body>
+  	  <script>
+function valida_formulario() {
+		var  dato = document.getElementById("txt_recuperar").value;
+		
+		if(dato ==''){
+		alert("Verefique su dato");
+		return false;
+		}
+		
+		return true;		
+}
+</script>
+
+<div class="container">
+	<section id="content">
+		<form action="app/recuperar_pws.php" method="post" onsubmit="return valida_formulario()">
+			<h2>¿Has olvidado tu contraseña de cliente? </h2>
+			<p>Introduce tu numero de contrato o correo de usuario que ya hayas creado y haz clic en Comprobar.</p>
+			<div>
+				<input type="text" placeholder="ID O CORREO" id="txt_recuperar" name="txt_recuperar" />
+			</div>
+			<div>
+				<input type="submit" value="Comprobar" />
+			</div>
+		</form><!-- form -->
+		
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+  
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
